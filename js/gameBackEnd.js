@@ -203,7 +203,6 @@ Table.prototype.compareHands = function() {
 					eventAction: 'push - no wins',
 					eventLabel: ''
 				});
-		return;
 	}
 	else {
 		console.log("Player is better.");
