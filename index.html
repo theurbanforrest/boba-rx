@@ -1,0 +1,126 @@
+<html>
+<head>
+
+<!--
+<style>
+	.hearts-a {
+	width: 45px;
+	height: 63px;
+	background: url('img/CardsSmall.gif') -135px -126px;
+}
+</style>
+-->
+</head>
+<body>
+	<script src="js/jquery-1.9.1.js">
+	</script>
+	<script src="js/card.js">
+	</script>
+	<script src="js/hand.js">
+	</script>
+	<script src="js/shoe.js">
+	</script>
+	<script src="js/table.js">
+	</script>
+	<script src="js/mover.js">
+	</script>
+
+	<script src="js/gameBackEnd.js">
+	</script>
+	<script src="js/gameFrontEnd.js">
+	</script>
+
+<!--
+=======================
+The Table
+=======================
+-->
+      <!-- ROW -->
+    <div class="row">
+    	<div class="col-lg-4">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+
+			<h1>Player: <div id="player-hand-value"></div></h1>
+       		<br>
+
+        			<img id="player1-card0" class="hidden-card" src="css/trans_pix.png">
+					<img id="player1-card1" class="hidden-card" src="css/trans_pix.png">
+        			<img id="player1-card2" class="#" src="css/trans_pix.png">
+					<img id="player1-card3" class="#" src="css/trans_pix.png">
+        			<img id="player1-card4" class="#" src="css/trans_pix.png">
+					<img id="player1-card5" class="#" src="css/trans_pix.png">
+        			<img id="player1-card6" class="#" src="css/trans_pix.png">
+					<img id="player1-card7" class="#" src="css/trans_pix.png">
+        			<img id="player1-card8" class="#" src="css/trans_pix.png">
+					<img id="player1-card9" class="#" src="css/trans_pix.png">
+
+					<br><br>
+
+			<h1>House: <div id="house-hand-value"></div></h1>
+			<br>
+        			<img id="house-card0" class="hidden-card" src="css/trans_pix.png">
+					<img id="house-card1" class="hidden-card" src="css/trans_pix.png">
+        			<img id="house-card2" class="#" src="css/trans_pix.png">
+					<img id="house-card3" class="#" src="css/trans_pix.png">
+        			<img id="house-card4" class="#" src="css/trans_pix.png">
+					<img id="house-card5" class="#" src="css/trans_pix.png">
+        			<img id="house-card6" class="#" src="css/trans_pix.png">
+					<img id="house-card7" class="#" src="css/trans_pix.png">
+        			<img id="house-card8" class="#" src="css/trans_pix.png">
+					<img id="house-card9" class="#" src="css/trans_pix.png">
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+        	<br>
+        		<button onclick = "table.init()">Initialize</button>
+				<button onclick = "table.runGame()">Run Game</button>
+				<button onclick = "$('#count-display').text( table.getCount() )">Get Count</button>
+			<br>
+			    <h4>Count: <div id="count-display">0</div></h4>
+			    <h4>Action: 
+			    <div id="action-display">Test</div>
+			    </h4>
+        </div><!-- /.col-lg-4 -->
+    </div>
+
+    <div class="row">
+
+
+    </div>
+
+    <!--End Marketing Container Layout -->
+
+
+	<script>
+		//Set up new Table(), diagnostics, temp fixes
+		console.log("Card Counter Simulator v1.0.1");
+
+
+		var table = new Table();
+		$('.row').css('padding-left','10%');
+
+	</script>
+
+
+ <!-- START google analytics -->
+
+ <script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-74507900-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+<!-- END google analytics -->
+
+ <!-- Include Bootstrap css' -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/example-theme-Carousel.css" rel="stylesheet">
+  <link href="css/cards-sprite.css" rel="stylesheet">
+</body>
+</html>
