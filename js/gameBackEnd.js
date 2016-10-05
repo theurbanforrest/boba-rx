@@ -36,8 +36,8 @@ Table.prototype.dealAll = function() {
 		ga('send', {
 			hitType: 'event',
 			eventCategory: 'table',
-			eventAction: 'deal-game',
-			eventLabel: 'table-deal-game'
+			eventAction: 'deal game',
+			eventLabel: ''
 		});
 };
 
@@ -59,8 +59,8 @@ Table.prototype.playHand = function(theHand) {
 				ga('send', {
 					hitType: 'event',
 					eventCategory: 'game',
-					eventAction: 'busted',
-					eventLabel: 'game-busted'
+					eventAction: 'player busted - house wins',
+					eventLabel: ''
 				});
 
 			return false;
@@ -73,9 +73,9 @@ Table.prototype.playHand = function(theHand) {
 			//Tracking
 				ga('send', {
 					hitType: 'event',
-					eventCategory: 'game',
-					eventAction: 'busted',
-					eventLabel: 'game-error-failsafe'
+					eventCategory: 'table',
+					eventAction: 'back end error',
+					eventLabel: ''
 				});
 
 			return false;
@@ -91,7 +91,13 @@ Table.prototype.playHand = function(theHand) {
 			this.moveCard(this.shoe,theHand);
 			//adds card then sends back to top of the while(!busted) loop
 
-
+			//Tracking
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'player',
+					eventAction: 'player hits',
+					eventLabel: ''
+				});
 		}
 		else{
 			console.log("Standing on "+theHand.getValSoft());
@@ -99,9 +105,9 @@ Table.prototype.playHand = function(theHand) {
 			//Tracking
 				ga('send', {
 					hitType: 'event',
-					eventCategory: 'game',
-					eventAction: 'player-stands',
-					eventLabel: 'game-player-stands'
+					eventCategory: 'player',
+					eventAction: 'player stands',
+					eventLabel: ''
 				});
 			return true;
 		}
@@ -159,10 +165,17 @@ Table.prototype.playHandAuto = function(theHand) {
 };
 
 Table.prototype.compareHands = function() {
-//No tracking - this helper func is for the dealer to autoplay
 	if( !this.house.hand || !this.player.hand ) {
 		console.log("House or Player's Hand not valid");
 		return false;
+
+		//Tracking
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'game',
+				eventAction: 'back end error',
+				eventLabel: ''
+			});
 	}
 
 	var val_house = (this.house.hand.getValSoft()>21 ? this.house.hand.getValHard() : this.house.hand.getValSoft() );
@@ -171,20 +184,44 @@ Table.prototype.compareHands = function() {
 
 	if(val_house>val_player) {
 		console.log("House is better.");
+			//Tracking
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'game',
+					eventAction: 'house better - house wins',
+					eventLabel: ''
+				});
+		
 		return this.house.hand;
 	}
 	else if (val_house == val_player) {
 		console.log("Push. No Winner.");
-
+			//Tracking
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'game',
+					eventAction: 'push - no wins',
+					eventLabel: ''
+				});
+		return;
 	}
 	else {
 		console.log("Player is better.");
+		//Tracking
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'game',
+					eventAction: 'player better - player wins',
+					eventLabel: ''
+				});
 		return this.player.hand;
 	}
 
 };
 
 Table.prototype.runGame = function() {
+
+//TRACKING - All Tracking handled by each helper func
 
 	//Deal Player and House
 	this.dealAll();
