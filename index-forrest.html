@@ -212,12 +212,10 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
-                        </div>
+                    <div class="col-sm-12">
+                        <!-- ORIGINAL ALERT WENT HERE -->
                     </div>
+                    <!-- /.col-xx-12 -->
                 </div>
                 <!-- /.row -->
 
@@ -229,9 +227,39 @@
                             </div>
                             <div class="panel-body">
                                 <div id="forrest-chart"></div>
+                                <div class="alert alert-info alert-dismissable">
+                                    <form class="form-inline">        
+                                        <label for="sel1">I am a </label>
+                                            <select class="form-control" id="sel1">
+                                                <option>Job Candidate</option>
+                                                <option>Recruiter</option>
+                                            </select>
+                                        <label for="sel2">seeking the role </label>
+                                            <select class="form-control" id="sel2">
+                                                <option>Retail Pharmacist</option>
+                                                <option>Clinical Pharmacist</option>
+                                            </select>
+                                        <label for="sel3">with </label>
+                                            <select class="form-control" id="sel3">
+                                                <option>little experience</option>
+                                                <option>some experience</option>
+                                                <option>lots of experience</option>
+                                            </select>
+                                        <label for="form1">for $</label>
+                                        <input class="form-control" id="form1" type="number" value=80></input>
+                                        <label for="form1">,000 per year</label>
+                                    </form>
+                                    <button id="reveal-the-market" type="button" class="btn btn-primary" data-dismiss="alert" data-toggle>
+                                        Reveal The Market
+                                    </button>              
+                                </div>
+                                <!--./end alert-dismissable-->
                             </div>
+                            <!--./end panel-body-->
                         </div>
+                        <!--./end panel-default-->
                     </div>
+                    <!--./end col-md-6-->
                     <div class="col-md-6">
                             <a href="#forrest-chart" class="btn btn-default" data-toggle="collapse">Collapse Area Chart</a>
                             <div id="change-data-btn"><a href="#forrest-chart" class="btn btn-default">Change Data</a></div>
@@ -254,7 +282,8 @@
     </div>
     <!-- /#wrapper -->
 
-<!-- Modal -->
+<!-- Modal --
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -285,9 +314,6 @@
             <label for="form1">,000 per year</label>
         </div>
     </form>
-
-
-        ...
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -296,6 +322,8 @@
     </div>
   </div>
 </div>
+
+    .END COMMENTED OUT MODAL -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -306,14 +334,12 @@
     <!-- Morris Charts JavaScript -->
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data-forrest.js"></script>
 
-    <!-- Trigger modal on load -->
-    <script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-    </script>
+    <script src="js/forrest/marketchart-forrest.js"></script>
+    <script src="js/forrest/helpers-forrest.js"></script>
+    <script src="js/forrest/starterdata-forrest.js"></script>
+
+    <script src="js/forrest/main-forrest.js"></script>
 
 </body>
 
