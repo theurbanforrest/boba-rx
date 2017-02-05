@@ -4,9 +4,9 @@
 
 ## Props
 
-* [Start Bootstrap](http://startbootstrap.com/) 
+* [Start Bootstrap](http://startbootstrap.com/) - SBAdmin front-end template
 
 ## All Licenses
 
- * Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/gh-pages/LICENSE) license.
+ * [Start Bootstrap](http://startbootstrap.com/) - Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/gh-pages/LICENSE) license.
 
