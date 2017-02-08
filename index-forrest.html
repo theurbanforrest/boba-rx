@@ -20,6 +20,8 @@
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
+    <link href="css/forrest.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -187,10 +189,10 @@
                     -->
 
                     <li>
-                        <a href="index-forrest.html"><i class="fa fa-fw fa-dashboard"></i>Job Seekers</a>
+                        <a href="index-forrest.html?role=candidate"><i class="fa fa-fw fa-dashboard"></i>Candidates</a>
                     </li>
                     <li>
-                        <a href="index-forrest.html"><i class="fa fa-fw fa-power-off"></i>Recruiters</a>
+                        <a href="index-forrest.html?role=recruiter"><i class="fa fa-fw fa-power-off"></i>Recruiters</a>
                     </li>
                     
 <!--                    <li class="active">
@@ -223,53 +225,63 @@
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Current Market Demand</h3>
+                                <h3 id="viewRole-marketChart-panel-title"class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>...</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="forrest-chart"></div>
                                 <div class="alert alert-info alert-dismissable">
-                                    <form class="form-inline">        
-                                        <label for="sel1">I am a </label>
-                                            <select class="form-control" id="sel1">
-                                                <option>Job Candidate</option>
-                                                <option>Recruiter</option>
-                                            </select>
-                                        <label for="sel2">seeking the role </label>
+
+
+                                    <form id="inputAlert-form" class="form-inline" method="post" action="">        
+                                        <label id="viewRole-text" for="sel1">I am a </label>
                                             <select class="form-control" id="sel2">
                                                 <option>Retail Pharmacist</option>
                                                 <option>Clinical Pharmacist</option>
                                             </select>
-                                        <label for="sel3">with </label>
+                                        <label for="sel3"> with </label>
                                             <select class="form-control" id="sel3">
                                                 <option>little experience</option>
                                                 <option>some experience</option>
                                                 <option>lots of experience</option>
                                             </select>
-                                        <label for="form1">for $</label>
-                                        <input class="form-control" id="form1" type="number" value=80></input>
-                                        <label for="form1">,000 per year</label>
+                                        <label id="inputSalary-text" for="form1"> seeking to earn </label>
+                                        <input id="inputSalary-field" class="form-control" id="form1" type="text" value="80,000"></input>
+                                        <label for="form1"> per year</label>
                                     </form>
+
+
                                     <button id="reveal-the-market" type="button" class="btn btn-primary" data-dismiss="alert" data-toggle>
                                         Reveal The Market
                                     </button>              
                                 </div>
                                 <!--./end alert-dismissable-->
+                                 <div id="change-data-btn">
+                                <a href="#forrest-chart" class="btn btn-default">
+                                    Change Data
+                                </a>
+                            </div>
                             </div>
                             <!--./end panel-body-->
                         </div>
                         <!--./end panel-default-->
                     </div>
                     <!--./end col-md-6-->
-                    <div class="col-md-6">
-                            <a href="#forrest-chart" class="btn btn-default" data-toggle="collapse">Collapse Area Chart</a>
-                            <div id="change-data-btn"><a href="#forrest-chart" class="btn btn-default">Change Data</a></div>
-
-
-                            <!-- Button trigger modal
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                Launch demo modal
-                            </button>-->
+                    <div class="row">
+                        <div class="col-md-3 highlighted-module">
+                            <!--<a href="#forrest-chart" class="btn btn-default" data-toggle="collapse">Collapse Area Chart</a>
+                            -->
+                                <div id="highlighted-min" class="highlighted-cell">
+                                </div>-<div id="highlighted-max" class="highlighted-cell">
+                                </div>
+                        </div>
+                        <!--./end col-md-6-->
+                        <div class="col-md-6">
+                            this is a col-md-6
+                        </div>
+                        <!--./end col-md-6-->
                     </div>
+                    <!--/.row-->
+
                 </div>
                 <!-- / .row -->
 
@@ -282,7 +294,7 @@
     </div>
     <!-- /#wrapper -->
 
-<!-- Modal --
+<!-- Modal 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -330,6 +342,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars.js"></script>
 
     <!-- Morris Charts JavaScript -->
     <script src="js/plugins/morris/raphael.min.js"></script>
@@ -340,6 +353,7 @@
     <script src="js/forrest/starterdata-forrest.js"></script>
 
     <script src="js/forrest/main-forrest.js"></script>
+    
 
 </body>
 

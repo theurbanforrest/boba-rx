@@ -1,6 +1,6 @@
 # Boba-RX
 
-"Fill job openings smarter with the right data"
+"Know the market, ask for the right price"
 
 ## Props
 
