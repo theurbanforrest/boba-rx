@@ -1,19 +1,39 @@
+body {
+  margin-top: 20px;
+}
+
+.container-fluid {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .highlighted-module {
   background-color: #F46A6A;
   color:#fff;
   max-width:800px;
-  margin: 100px auto 0;
   text-align: center;
   display: table;
 }
+
 .highlighted-cell {
   display: table-cell;
   margin:1.5%;
-  font-size:50px;
+  font-size:1.6em;
   background-color: #FF6F6F;
   width:200px;
   border-radius: 50%;
-  height:200px;
+  height:100px;
   vertical-align: middle;
 }
 
+@media (max-width: 768px) {
+  #page-wrapper {
+    padding-top: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  #page-wrapper {
+    padding-top: 40px;
+  }
+}
