@@ -15,20 +15,40 @@ var dataSet1 = [
 
 var dataSet2 = [
         {
-            salary: '$40-49k',
-            interested: 6094            
+            salary: '$50k',
+            interested: 6043            
         },
         {
-            salary: '$50-59k',
+            salary: '$55k',
             interested: 8934
         },
         {
-            salary: '$60-69k',
+            salary: '$60k',
             interested: 2341
         },
         {
-            salary: '$70-79k',
+            salary: '$65k',
             interested: 2930
+        },
+        {
+            salary: '$70k',
+            interested: 5749
+        },
+        {
+            salary: '$75k',
+            interested: 3849
+        },
+        {
+            salary: '$80k',
+            interested: 2364
+        },
+        {
+            salary: '$85k',
+            interested: 4923
+        },
+        {
+            salary: '$90k',
+            interested: 2103
         }
     ];
 
